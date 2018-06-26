@@ -4,9 +4,11 @@ Python provides with the various data structures, with famous examples of list, 
  
  ---- From This point, each script in the main folder will be explained.
  
- 1. listTimeComparisonDataGenerator.py
+ **1. listTimeComparisonDataGenerator.py
  
-Description: Python provides numerous ways to iterate over a list and access its data. By accessing the data, other operations like data modification, data updation etc. can be done. This script focuses on two iteration methods: for loop iteration and list comprehension. In the script, two lists of equal size and same elements in created. The modification done is same in both cases, which is the doubling each element of the list. One list is modified through regular for loop with range function while second is modified through list comprehension.
+#Description: 
+Python provides numerous ways to iterate over a list and access its data. By accessing the data, other operations like data modification, data updation etc. can be done. This script focuses on two iteration methods: for loop iteration and list comprehension. In the script, two lists of equal size and same elements in created. The modification done is same in both cases, which is the doubling each element of the list. One list is modified through regular for loop with range function while second is modified through list comprehension.
 
-Usage: On running the script, user is asked with "Data Size". Data size is the upper limit on how many lists should be created. This provides a linear increase in the data and gives a relatively large amount of data. This is the only input and then program runs and generates the csv file in the same folder as script. The csv file will have three columns: first column is the list size, second column in the time taken by for loop and third column is the time taken by the list comprehension. Sample data files for the scripts are present inside the "listTimeData" folder.
+#Usage: 
+On running the script, user is asked with "Data Size". Data size is the upper limit on how many lists should be created. This provides a linear increase in the data and gives a relatively large amount of data. This is the only input and then program runs and generates the csv file in the same folder as script. The csv file will have three columns: first column is the list size, second column in the time taken by for loop and third column is the time taken by the list comprehension. Sample data files for the scripts are present inside the "listTimeData" folder.
 
