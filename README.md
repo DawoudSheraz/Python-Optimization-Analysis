@@ -23,3 +23,12 @@ On running the script, the data size will be required from the user. That data s
  1. To create list from 0, data size - 1.
  2. to create dictionary with key=value i.e. 0=0, 1=1 and so on.
 After the input, the list and dictionary are created and data is looped from 0 to data size -1. For each entry, it is searched in previously mentioned three ways and the data is stored inside the csv. The csv contains the four columns: first column is entry search, second is the time taken to search inside list, third is lookup time for dictionary key and fourth is the search time for the dictionary value. Sample data file is present inside "DictVsListLookup" folder.
+
+
+3. setListAndDictLookupComparison.py
+
+Description:
+This script is an extension of "listAndDictionaryLookupComparison". This script provides the data for lookup time of list, set and dictionary in python. For dictionary, only the "key" lookup time has been considered.
+
+Usage:
+The usage is also very same to the "listAndDictionaryLookupComparison.py". The difference is in the csv file. From the 4 columns, the first is the searched entry, second is the list lookup time, third is the dictionary key lookup time and fourth is the set lookup time. A sample output file is present inside the "ListVsDictVsSet Lookup Time Data" folder.
