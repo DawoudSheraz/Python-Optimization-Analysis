@@ -21,7 +21,6 @@ for list_size in range(1, data_size+1):
     start_time = time.time()
     list_2 = [x * 2 for x in list_2]
     comprehension_end_time = time.time() - start_time
-
     # Writing the data
     csv_writer.writerow((str(list_size)
                          + ","
