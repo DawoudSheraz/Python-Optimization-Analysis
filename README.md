@@ -20,8 +20,8 @@ Data searching is one of the significant requirement when dealing with data. Eac
 
 Usage:
 On running the script, the data size will be required from the user. That data size is used for two purposes:
- 1. To create list from 0, data size - 1.
- 2. to create dictionary with key=value i.e. 0=0, 1=1 and so on.
+     a. To create list from 0, data size - 1.
+     b. to create dictionary with key=value i.e. 0=0, 1=1 and so on.
 After the input, the list and dictionary are created and data is looped from 0 to data size -1. For each entry, it is searched in previously mentioned three ways and the data is stored inside the csv. The csv contains the four columns: first column is entry search, second is the time taken to search inside list, third is lookup time for dictionary key and fourth is the search time for the dictionary value. Sample data file is present inside "DictVsListLookup" folder.
 
 
