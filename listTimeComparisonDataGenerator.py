@@ -1,5 +1,23 @@
 import csv
 import time
+
+
+def forlooptimecalculation(data_list):
+    start_time = time.time()
+    for iterator in range(0, len(data_list)):
+        data_list[iterator] = data_list[iterator] * 2
+
+    return time.time() - start_time
+
+
+def listcomprehensiontime(data_list):
+
+    start_time = time.time()
+    data_list = [x * 2 for x in data_list]
+
+    return (time.time() - start_time), data_list
+
+
 data_size = int(input("data Size ?"))
 
 # output csv file with time logs
@@ -10,18 +28,11 @@ for list_size in range(1, data_size+1):
     list_1 = list(range(list_size))
     list_2 = list(range(list_size))
 
-    # modify list with for loop and range operator
-    start_time = time.time()
-    for iterator in range(0, len(list_1)):
-        list_1[iterator] = list_1[iterator] * 2
+    for_loop_time = forlooptimecalculation(list_1)
 
-    for_loop_time = time.time() - start_time
+    comprehension_end_time, list_2 = listcomprehensiontime(list_2)
 
-    # list Comprehension
-    start_time = time.time()
-    list_2 = [x * 2 for x in list_2]
-    comprehension_end_time = time.time() - start_time
-    # Writing the data
+    # Output the Time values to csv file
     csv_writer.writerow((str(list_size)
                          + ","
                          + str(for_loop_time)
@@ -29,4 +40,4 @@ for list_size in range(1, data_size+1):
                          + str(comprehension_end_time))
                         .split(","))
 
-
+output_file.close()

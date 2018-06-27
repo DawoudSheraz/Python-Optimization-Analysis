@@ -1,35 +1,40 @@
 import csv
 import time
+
+
+def datastructurelookuptime(data_structure, entry_searched):
+    start_time = time.time()
+    if entry_searched in data_structure:
+        return time.time() - start_time
+    else:
+        return 0
+
+
 data_size = int(input("data Size ?"))
-# Generating list, dictionary and set
+
+# Data Structures Generation
 data_list = list(range(data_size))
 data_dictionary = {}
 for count in range(0, data_size):
     data_dictionary[count] = count
-
 data_set = set(data_list)
 
 # output File
 output_file = open("list_vs_Dict_vs_Set_csv_" + str(data_size) + ".csv", "a")
 csv_writer = csv.writer(output_file, delimiter=',')
 
-# time storage dictionary
 time_dict = {}
+
 for each_entry in range(0, data_size):
+
     # List Search Time
-    start_time = time.time()
-    if each_entry in data_list:
-        time_dict["list_lookup"] = time.time() - start_time
+    time_dict["list_lookup"] = datastructurelookuptime(data_list, each_entry)
 
     # Dictionary Key lookup time
-    start_time = time.time()
-    if each_entry in data_dictionary:
-        time_dict["dict_key_lookup"] = time.time() - start_time
+    time_dict["dict_key_lookup"] = datastructurelookuptime(data_dictionary, each_entry)
 
     # Set Lookup time
-    start_time = time.time()
-    if each_entry in data_set:
-        time_dict["set_lookup"] = time.time() - start_time
+    time_dict["set_lookup"] = datastructurelookuptime(data_set, each_entry)
 
     # Saving the Data
     csv_writer.writerow((str(each_entry)
@@ -42,3 +47,5 @@ for each_entry in range(0, data_size):
                         .split(","))
 
     print("Entry : " + str(each_entry) + " Searched")
+
+output_file.close()
