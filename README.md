@@ -1,6 +1,6 @@
 ### NOTE: All the scripts are compatible only with Python 3.6. To run them on Python 2.7, the modifications will be required.
 
-Python provides with the various data structures, with famous examples of list, dictionary, set and tuple. One of the major aspect of the python data structures is the ease of getting things done. Each data structure provides features that are easy to use. e.g. to search any key inside a dictionary, an operator of "in" is used. However, when we talk about in term of performance, not all data structures prove to be useful. This repository will provide with different scripts, that apply various operations in accordance to different data structres and save the resultant data in csv files.
+Python provides with the various data structures, with famous examples of list, dictionary, set and tuple. One of the major aspect of the python data structures is the ease of getting things done. Each data structure provides features that are easy to use. e.g. to search any key inside a dictionary, an operator of "in" is used. However, when we talk about in term of performance, not all data structures prove to be useful. This repository will provide with different scripts, that apply various operations in accordance to different data structures and save the resultant data in csv files.
  
  ---- From This point, each script in the main folder will be explained.
  
@@ -16,7 +16,7 @@ On running the script, user is asked with "Data Size". Data size is the upper li
 # 2. listAndDictionaryLookupComparison.py
 
 ## Description:
-Data searching is one of the significant requirement when dealing with data. Each data structure provides with different time complexities for looking up data. This script focuses on the dictionaries and list. Three lookups are done: first is inside a list, second one is inside dictionary keys and third one inside the dictionary values. Given a number, all three lookups are done and time for each lookup is calculated. No explict loops are used for the searching. The default search features by the python are used. This aims to find which data structure is time costly for searching.
+Data searching is one of the significant requirement when dealing with data. Each data structure provides with different time complexities for looking up data. This script focuses on the dictionaries and list. Three lookups are done: first is inside a list, second one is inside dictionary keys and third one inside the dictionary values. Given a number, all three lookups are done and time for each lookup is calculated. No explicit loops are used for the searching. The default search features by the python are used. This aims to find which data structure is time costly for searching.
 
 ## Usage:
 On running the script, the data size will be required from the user. That data size is used for two purposes:
@@ -40,7 +40,8 @@ String concatenation is one of the commonly used feature. Python provides variou
    - "+" operator
    - % operator
    - {} with format
-  The choice of each method is subjective. But when it comes to time complexity, not all might be efficient.
+
+The choice of each method is subjective. But when it comes to time complexity, not all might be efficient.
   
  ## Usage
  On starting the program, user is prompted for Data Size. The data size specifies the max number of concatenations done to a string, starting from 1. From 1 to onwards, the concatenations are done by 3 methods and their time taken is saved to csv file. The csv comprises of 4 columns as:
