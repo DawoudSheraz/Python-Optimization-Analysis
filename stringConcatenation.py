@@ -31,8 +31,18 @@ def concateformat(current_value, addition):
 
 data_size = int(input("data Size ?"))
 
-output_file = open("concat_" + str(data_size) + ".csv", "a")
+output_file = open("concat_" + str(data_size) + ".csv", "w")
 csv_writer = csv.writer(output_file, delimiter=',')
+
+# CSV header added
+csv_writer.writerow("number_of_concats"
+                    ","
+                    "+ concat"
+                    ","
+                    "% concat"
+                    ","
+                    "format_concat"
+                    .split(","))
 
 time_dict = {}
 
