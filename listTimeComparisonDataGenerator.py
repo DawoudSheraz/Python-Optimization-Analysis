@@ -21,8 +21,13 @@ def listcomprehensiontime(data_list):
 data_size = int(input("data Size ?"))
 
 # output csv file with time logs
-output_file = open("time_csv_" + str(data_size) + ".csv", "a")
+output_file = open("time_csv_" + str(data_size) + ".csv", "w")
 csv_writer = csv.writer(output_file, delimiter=',')
+
+# CSV header added
+csv_writer.writerow("list_size,for_loop,list_comprehension"
+                    .split(","))
+
 
 for list_size in range(1, data_size+1):
     list_1 = list(range(list_size))
@@ -39,5 +44,6 @@ for list_size in range(1, data_size+1):
                          + ","
                          + str(comprehension_end_time))
                         .split(","))
+    print("List size : %s done" % list_size)
 
 output_file.close()

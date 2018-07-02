@@ -25,8 +25,13 @@ data_dictionary = {}
 for count in range(0, data_size):
     data_dictionary[count] = count
 
-output_file = open("list_vs_Dict_csv_" + str(data_size) + ".csv", "a")
+output_file = open("list_vs_Dict_csv_" + str(data_size) + ".csv", "w")
 csv_writer = csv.writer(output_file, delimiter=',')
+
+# CSV header added
+csv_writer.writerow(("searched_entry,list_lookup,"
+                    "dict_key_lookup,dict_value_lookup")
+                    .split(","))
 
 time_dict = {}
 

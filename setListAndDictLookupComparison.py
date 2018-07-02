@@ -20,9 +20,18 @@ for count in range(0, data_size):
 data_set = set(data_list)
 
 # output File
-output_file = open("list_vs_Dict_vs_Set_csv_" + str(data_size) + ".csv", "a")
+output_file = open("list_vs_Dict_vs_Set_csv_" + str(data_size) + ".csv", "w")
 csv_writer = csv.writer(output_file, delimiter=',')
 
+# CSV header added
+csv_writer.writerow(("searched_entry"
+                     ","
+                     "list_lookup"
+                     ","
+                    "dict_key_lookup"
+                     ","
+                     "set_lookup")
+                    .split(","))
 time_dict = {}
 
 for each_entry in range(0, data_size):
