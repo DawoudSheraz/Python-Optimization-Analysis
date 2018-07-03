@@ -2,19 +2,29 @@ import csv
 import time
 
 
-def datastructurelookuptime(data_structure, entry_searched,
-                            dictionary_value_special_case=0):
+def get_lookup_time(data_structure, entry_searched):
+    """
+    :param data_structure: in which entry will be searched using "in"
+    :param entry_searched : value to be searched
+    :returns: time taken to search, 0 if not found
+    """
     start_time = time.time()
-    if not dictionary_value_special_case:
-        if entry_searched in data_structure:
-            return time.time() - start_time
-        else:
-            return 0
-    else:               # Special case when dictionary value is to searched
-        if data_structure[entry_searched] in data_structure:
-            return time.time() - start_time
-        else:
-            return 0
+    if entry_searched in data_structure:
+        return time.time() - start_time
+    else:
+        return 0
+
+
+def get_dictionary_value_lookup_time(dictionary, entry_searched):
+    """
+    :param dictionary: dictionary whose values will ne searched
+    :param entry_searched : value to be searched
+    :returns: time taken to search, 0 if not found
+    """
+    start_time = time.time()
+    if dictionary[entry_searched] in dictionary:
+        return time.time() - start_time
+    return 0
 
 
 data_size = int(input("data Size ?"))
@@ -38,13 +48,13 @@ time_dict = {}
 for each_entry in range(0, data_size):
 
     # List Search Time
-    time_dict["list_lookup"] = datastructurelookuptime(data_list, each_entry)
+    time_dict["list_lookup"] = get_lookup_time(data_list, each_entry)
 
     # Dictionary Key lookup time
-    time_dict["dict_key_lookup"] = datastructurelookuptime(data_dictionary, each_entry)
+    time_dict["dict_key_lookup"] = get_lookup_time(data_dictionary, each_entry)
 
     # Dictionary value lookup time
-    time_dict["dict_value_lookup"] = datastructurelookuptime(data_dictionary, each_entry, 1)
+    time_dict["dict_value_lookup"] = get_dictionary_value_lookup_time(data_dictionary, each_entry)
 
     csv_writer.writerow((str(each_entry)
                          + ","
