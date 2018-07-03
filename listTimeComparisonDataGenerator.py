@@ -2,7 +2,11 @@ import csv
 import time
 
 
-def forlooptimecalculation(data_list):
+def get_for_loop_time(data_list):
+    """
+    :param data_list: list to be modified through for loop
+    :returns: time taken to modify the list
+    """
     start_time = time.time()
     for iterator in range(0, len(data_list)):
         data_list[iterator] = data_list[iterator] * 2
@@ -10,8 +14,11 @@ def forlooptimecalculation(data_list):
     return time.time() - start_time
 
 
-def listcomprehensiontime(data_list):
-
+def get_list_comprehension_time(data_list):
+    """
+    :param data_list: list to be modified through list comprehension
+    :returns: tuple( time taken for modification, modified list)
+    """
     start_time = time.time()
     data_list = [x * 2 for x in data_list]
 
@@ -33,9 +40,9 @@ for list_size in range(1, data_size+1):
     list_1 = list(range(list_size))
     list_2 = list(range(list_size))
 
-    for_loop_time = forlooptimecalculation(list_1)
+    for_loop_time = get_for_loop_time(list_1)
 
-    comprehension_end_time, list_2 = listcomprehensiontime(list_2)
+    comprehension_end_time, list_2 = get_list_comprehension_time(list_2)
 
     # Output the Time values to csv file
     csv_writer.writerow((str(list_size)

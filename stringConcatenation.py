@@ -2,9 +2,12 @@ import csv
 import time
 
 
-# Addition specifies the concatenations to the current value
-def concatethroughplus(current_value, addition):
-
+def get_concate_through_plus_time(current_value, addition):
+    """
+    :param current_value: string on which concats will be done
+    :param addition : specifies number of concats to be done
+    :returns: time taken to do the concats through + operator
+    """
     start_time = time.time()
     for counter in range(0, addition):
         current_value = current_value + str(counter)
@@ -12,8 +15,12 @@ def concatethroughplus(current_value, addition):
     return current_value, time.time() - start_time
 
 
-def concatepercentage(current_value, addition):
-
+def get_concate_percentage_time(current_value, addition):
+    """
+    :param current_value: string on which concats will be done
+    :param addition : specifies number of concats to be done
+    :returns: time taken to do the concats through % operator
+    """
     start_time = time.time()
     for counter in range(0, addition):
         current_value = "%s%s" % (current_value, counter)
@@ -21,7 +28,12 @@ def concatepercentage(current_value, addition):
     return current_value, time.time() - start_time
 
 
-def concateformat(current_value, addition):
+def get_concate_format_time(current_value, addition):
+    """
+    :param current_value: string to be concated through format operator
+    :param addition : specifies number of concats to be done
+    :returns: time taken to do the concats through format operator
+    """
     start_time = time.time()
     for counter in range(0, addition):
         current_value = "{}{}".format(current_value, counter)
@@ -52,13 +64,16 @@ for count in range(0, data_size):
     string_3 = ""
 
     # "+" concat time
-    string_1, time_dict["plus_concat"] = concatethroughplus(string_1, count)
+    string_1, time_dict["plus_concat"] = get_concate_through_plus_time(
+                                                        string_1, count)
 
     # "%" concat time
-    string_2, time_dict["percentage_concat"] = concatepercentage(string_2, count)
+    string_2, time_dict["percentage_concat"] = get_concate_percentage_time(
+                                                        string_2, count)
 
     # "format" concat time
-    string_3, time_dict["format_concat"] = concateformat(string_3, count)
+    string_3, time_dict["format_concat"] = get_concate_format_time(
+                                            string_3, count)
 
     csv_writer.writerow((str(count + 1)
                          + ","
